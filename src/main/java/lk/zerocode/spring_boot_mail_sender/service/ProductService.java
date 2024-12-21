@@ -3,7 +3,6 @@ package lk.zerocode.spring_boot_mail_sender.service;
 import lk.zerocode.spring_boot_mail_sender.model.Product;
 import lk.zerocode.spring_boot_mail_sender.repository.ProductRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -17,9 +16,7 @@ public class ProductService {
 
     public Product saveProduct(Product product) {
         Product savedProduct = productRepository.save(product);
-
         sendProductEmail(savedProduct);
-
         return savedProduct;
     }
 
